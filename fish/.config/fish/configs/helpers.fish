@@ -14,7 +14,12 @@ end
 
 set -xg mycmds $mycmds (_color_mycmd "mkcd" "mkdir -p and then cd")
 
-alias fish_reload 'source $HOME/.config/fish/configs/main.fish'
+function fish_reload --description "Simulate fish source configs"
+    for f in (ls $HOME/.config/fish/conf.d)
+        source $HOME/.config/fish/conf.d/$f
+    end
+    source $HOME/.config/fish/configs/main.fish
+end
 set -xg mycmds $mycmds (_color_mycmd "fish_reload" "reload my fish configs")
 
 function rust_bin_update
@@ -31,4 +36,3 @@ if [ $IS_MAC = 1 ]
     end
     set -xg mycmds $mycmds (_color_mycmd "port_update" "update bin installed by port")
 end
-
