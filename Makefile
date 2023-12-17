@@ -7,7 +7,7 @@ del-links:
 arch-install:
 	sudo pacman -Sy
 	sudo pacman -S --needed \
-		base-devel \
+		base-devel go \
 		fish fisher \
 		neovim micro \
 		git curl wget jq \

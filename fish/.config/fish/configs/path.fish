@@ -1,1 +1,1 @@
-set -xg PATH $HOME/bin $PATH
+set -xg PATH $HOME/bin $HOME/go/bin $PATH
