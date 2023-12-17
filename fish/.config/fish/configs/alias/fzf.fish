@@ -21,7 +21,7 @@ alias fzf_search_git_status _fzf_search_git_status
 # abbr gsf fzf_search_git_status
 
 alias fzf_search_vars '_fzf_search_variables (set --show | psub) (set --names | psub)'
-set -xg mycmds $mycmds "fzf_search_vars : show all env vars"
+set -xg mycmds $mycmds (_color_mycmd "fzf_search_vars" "show all env vars")
 
 function fzf_kill --description 'interactive kill, allow argument for kill signal, default is -9'
     set -l signal -9
@@ -40,7 +40,7 @@ function fzf_kill --description 'interactive kill, allow argument for kill signa
     or echo $pid | xargs kill $signal
 end
 abbr fkill fzf_kill
-set -xg mycmds $mycmds "fkill       : interactive kill"
+set -xg mycmds $mycmds (_color_mycmd "fkill" "interactive kill")
 
 function fzf_editor_file --description 'find a file and use $EDITOR to edit'
     argparse -n fzf_editor_file h/help w/wait -- $argv
@@ -59,4 +59,4 @@ fzf_editor_file [OPTS] [FILTER]
     eval (_choose_editor) $file
 end
 abbr fe fzf_editor_file
-set -xg mycmds $mycmds "fe          : open file to edit"
+set -xg mycmds $mycmds (_color_mycmd "fe" "open file to edit")

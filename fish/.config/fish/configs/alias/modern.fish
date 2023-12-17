@@ -15,8 +15,8 @@ alias ld 'll -d'
 alias lt 'lsd --tree'
 alias ltn 'lsd --tree --depth'
 
-set -xg mycmds $mycmds "lt          : lt; better tree"
-set -xg mycmds $mycmds "ltn         : ltn <level>; better tree"
+set -xg mycmds $mycmds (_color_mycmd "lt" "lt; better tree")
+set -xg mycmds $mycmds (_color_mycmd "ltn" "ltn <level>; better tree")
 
 ############################################
 # bat, better cat

@@ -9,6 +9,13 @@ function helpme
     end
 end
 
+function _color_mycmd --description "colorful print the command"
+    set_color -o blue
+    printf $argv[1]
+    set_color normal
+    printf " : %s" $argv[2]
+end
+
 # locale setting
 set -xg LC_TIME zh_CN.UTF-8
 set -xg LC_ALL en_US.UTF-8
