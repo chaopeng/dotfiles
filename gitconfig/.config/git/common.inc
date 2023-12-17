@@ -1,3 +1,7 @@
+# Include this file
+# [include]
+#   path = <HOME>/.config/git/common.inc
+
 [core]
 	pager = delta
 
