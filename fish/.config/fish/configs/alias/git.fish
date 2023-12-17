@@ -2,7 +2,9 @@
 # but only include my daily routines.
 
 alias g git
-abbr glog fzf_search_git_log
+alias lgit lazygit
+abbr glog git log
+abbr glog1 git log --oneline
 abbr glg fzf_search_git_log
 abbr gl 'git pull'
 abbr gp 'git push'
