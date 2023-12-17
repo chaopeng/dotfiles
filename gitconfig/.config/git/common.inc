@@ -24,6 +24,10 @@
 [init]
 	defaultBranch = main
 
+[log]
+  date = iso
+
+# Delta Themes
 [delta "arctic-fox"]
 	# author: https://github.com/anthony-halim
 	dark = true
