@@ -14,10 +14,6 @@
 [diff]
 	colorMoved = default
 
-[user]
-	name = chaopeng
-	email = chaopeng@chaopeng.me
-
 [init]
 	defaultBranch = main
 
