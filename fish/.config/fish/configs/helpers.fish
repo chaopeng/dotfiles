@@ -6,7 +6,6 @@ end
 
 set -xg mycmds $mycmds "notify      : send a notification"
 
-
 function mkcd
     argparse --min-args=1 --max-args=1 -- $argv
     mkdir -p $argv[1]
@@ -14,3 +13,6 @@ function mkcd
 end
 
 set -xg mycmds $mycmds "mkcd        : mkdir -p and then cd"
+
+alias fish_reload 'source $HOME/.config/fish/configs/main.fish'
+set -xg mycmds $mycmds "fish_reload : reload my fish configs"
