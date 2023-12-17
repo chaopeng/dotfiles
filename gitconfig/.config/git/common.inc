@@ -11,6 +11,9 @@
 [delta]
 	navigate = true
 	light = false
+  true-color = always
+  line-numbers = true
+  features = arctic-fox
 
 [merge]
 	conflictstyle = diff3
@@ -20,4 +23,40 @@
 
 [init]
 	defaultBranch = main
+
+[delta "arctic-fox"]
+	# author: https://github.com/anthony-halim
+	dark = true
+	syntax-theme = base16
+	file-added-label = [+]
+	file-copied-label = [==]
+	file-modified-label = [*]
+	file-removed-label = [-]
+	file-renamed-label = [->]
+	file-style = omit
+	hunk-header-decoration-style = "#5E81AC" ul
+	hunk-header-file-style = blue ul bold
+	hunk-header-line-number-style = yellow box bold
+	hunk-header-style = file line-number syntax bold italic
+	plus-style = brightgreen
+	plus-emph-style = black green
+	minus-style = brightred
+	minus-emph-style = black red
+	line-numbers = true
+	line-numbers-minus-style = brightred
+	line-numbers-plus-style = brightgreen
+	line-numbers-left-style = "#5E81AC"
+	line-numbers-right-style = "#5E81AC"
+	line-numbers-zero-style = "#4C566A"
+	zero-style = syntax
+	whitespace-error-style = black bold
+	blame-code-style = syntax
+	blame-format = "{author:<18} {commit:<6} {timestamp:<15}"
+	blame-palette = "#2E3440" "#3B4252" "#434C5E"
+	merge-conflict-begin-symbol = ~
+	merge-conflict-end-symbol = ~
+	merge-conflict-ours-diff-header-style = yellow bold
+	merge-conflict-ours-diff-header-decoration-style = "#5E81AC" box
+	merge-conflict-theirs-diff-header-style = yellow bold
+	merge-conflict-theirs-diff-header-decoration-style = "#5E81AC" box
 
