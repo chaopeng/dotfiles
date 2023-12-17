@@ -43,7 +43,7 @@ mac-install:
 debian-install:
 	sudo apt install \
 		fish curl wget \
-		fd-find bat jq httpie fzf micro \
+		fd-find bat jq fzf micro \
 		kitty stow
 	rustup update
 	cargo install cargo-update
@@ -53,5 +53,6 @@ debian-install:
 	cargo install bat
 	cargo install xh
 	cargo install tealdeer
+	cargo install git-delta
 	go install github.com/jesseduffield/lazygit@latest
 
