@@ -21,5 +21,5 @@ set -xg mycmds $mycmds (_color_mycmd "ltn" "ltn <level>; better tree")
 ############################################
 # bat, better cat
 # 1. install bat
-# 2. source bat.fish
 alias cat bat
+alias catp 'bat -p'
