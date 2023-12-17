@@ -1,5 +1,11 @@
 links:
-	stow --verbose --target=$$HOME --restow */
+ifeq ($(shell uname), Linux)
+	ls -d */ | grep -v ".*-mac/" | xargs stow --verbose --target=$$HOME --restow
+else ifeq ($(shell uname), Darwin)
+	ls -d */ | grep -v ".*-linux/" | xargs stow --verbose --target=$$HOME --restow
+else
+	@echo "OS does not support yet"
+endif
 
 del-links:
 	stow --verbose --target=$$HOME --delete */
