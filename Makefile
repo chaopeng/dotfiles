@@ -40,3 +40,17 @@ mac-install:
 		kitty \
 		tealdeer stow
 
+debian-install:
+	sudo apt install \
+		fish curl wget \
+		fd-find bat jq httpie fzf micro \
+		kitty stow
+	rustup update
+	cargo install cargo-update
+  cargo install lsd
+  cargo install starship
+  cargo install zellij
+  cargo install bat
+  cargo install xh
+	cargo install tealdeer
+	go install github.com/jesseduffield/lazygit@latest
