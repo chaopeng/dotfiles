@@ -11,5 +11,5 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-eval "$(~/.cargo/bin/starship init bash)"
+eval "$(starship init bash)"
 
