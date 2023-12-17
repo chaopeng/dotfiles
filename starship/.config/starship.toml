@@ -1,0 +1,131 @@
+# https://starship.rs/config/
+# https://starship.rs/advanced-config/
+
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+
+# Wait 30 milliseconds for starship to check files under the current directory.
+scan_timeout = 30     # Default: 30
+command_timeout = 1000 # Default: 500
+add_newline = true
+
+format = """\
+$battery\
+$os\
+$shell\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$fill\
+$cmd_duration\
+$time\
+$line_break\
+$character"""
+
+[fill]
+symbol = ' '
+
+[[battery.display]]
+threshold = 15
+style = "bold red"
+
+[character]
+error_symbol = "[✗](bold red)"
+
+[directory]
+read_only = " 󰌾"
+style = "bold blue"
+truncation_length = 2
+fish_style_pwd_dir_length = 1
+
+[hostname]
+ssh_symbol = " "
+trim_at = "."
+style = "purple"
+format = "[$ssh_symbol](green bold)[$hostname]($style) in "
+
+[time]
+disabled = false
+use_12hr = false
+utc_time_offset = "local"
+style = "fg:105"
+format = "[$time]($style) "
+
+
+[git_branch]
+symbol = " "
+
+[git_status]
+ignore_submodules = true
+# Disable untracked files checking in gti git_status
+# git status -uno
+# untracked = ""
+#
+# Found better solution for large repo:
+# git config core.fsmonitor true
+# git config core.untrackedCache true
+# git config feature.manyFiles true
+
+[os]
+disabled = false
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[shell]
+fish_indicator = ''
+bash_indicator = "bsh "
+unknown_indicator = "mystery shell "
+style = 'red bold'
+format = "[$indicator]($style)"
+disabled = false
+
+[package]
+symbol = "󰏗 "
+
+[cmd_duration]
+min_time = 1000
+
