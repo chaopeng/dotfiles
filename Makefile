@@ -28,3 +28,15 @@ fish-install:
 	fisher install edc/bass
 	fisher install catppuccin/fish
 
+mac-install:
+	sudo port selfupdate
+	sudo port install \
+		go \
+		fish \
+		neovim micro \
+		curl wget jq \
+		lsd zellij xh ripgrep fd bat fzf starship \
+		lazygit git-delta \
+		kitty \
+		tealdeer stow
+
