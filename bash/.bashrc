@@ -11,5 +11,9 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-eval "$(starship init bash)"
+# source fils in ~/.config/bash/
+for f in ~/.config/bash/*; do
+	source $f
+done
 
+eval "$(starship init bash)"
