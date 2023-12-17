@@ -47,10 +47,11 @@ debian-install:
 		kitty stow
 	rustup update
 	cargo install cargo-update
-  cargo install lsd
-  cargo install starship
-  cargo install zellij
-  cargo install bat
-  cargo install xh
+	cargo install lsd
+	cargo install starship
+	cargo install zellij
+	cargo install bat
+	cargo install xh
 	cargo install tealdeer
 	go install github.com/jesseduffield/lazygit@latest
+
