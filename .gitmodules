@@ -3,4 +3,4 @@
   url = git@github.com:chaopeng/nvim-config.git
 [submodule "private"]
   active = false
-  ignore = true
+  ignore = all
