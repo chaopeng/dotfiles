@@ -1,0 +1,23 @@
+[core]
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = false
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[user]
+	name = chaopeng
+	email = chaopeng@chaopeng.me
+
+[init]
+	defaultBranch = main
+

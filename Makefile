@@ -12,7 +12,7 @@ arch-install:
 		neovim micro \
 		git curl wget jq \
 		lsd zellij xh ripgrep fd bat fzf starship \
-		lazygit \
+		lazygit git-delta \
 		kitty \
 		tldr stow
 
