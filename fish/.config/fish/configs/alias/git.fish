@@ -7,6 +7,7 @@ abbr glog git log
 abbr glog1 git log --oneline
 abbr glg fzf_search_git_log
 abbr gl 'git pull'
+abbr glrs 'git pull --recurse-submodules'
 abbr gp 'git push'
 abbr gpf 'git push --force'
 abbr gst fzf_search_git_status
