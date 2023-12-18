@@ -6,6 +6,7 @@ else ifeq ($(shell uname), Darwin)
 else
 	@echo "OS does not support yet"
 endif
+	bat cache --build
 
 del-links:
 	stow --verbose --target=$$HOME --delete */

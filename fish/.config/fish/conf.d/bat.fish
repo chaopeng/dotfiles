@@ -1,2 +1,2 @@
 # choose ansi as theme
-set -gx BAT_THEME ansi
+set -gx BAT_THEME Catppuccin-mocha
