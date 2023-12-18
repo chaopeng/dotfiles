@@ -21,7 +21,8 @@ arch-install:
 		lsd zellij xh ripgrep fd bat fzf starship \
 		lazygit git-delta \
 		kitty \
-		tldr stow
+		tldr stow \
+		python-pipenv
 
 fish-install: SHELL:=/usr/bin/fish
 fish-install:
@@ -39,13 +40,15 @@ mac-install:
 		lsd zellij xh ripgrep fd bat fzf starship \
 		lazygit git-delta \
 		kitty \
-		tealdeer stow
+		tealdeer stow \
+		pipenv
 
 debian-install:
 	sudo apt install \
 		fish curl wget \
 		fd-find bat jq fzf micro \
-		kitty stow
+		kitty stow \
+		pipenv
 	rustup update
 	cargo install cargo-update
 	cargo install lsd
@@ -56,4 +59,3 @@ debian-install:
 	cargo install tealdeer
 	cargo install git-delta
 	go install github.com/jesseduffield/lazygit@latest
-
