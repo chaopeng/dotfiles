@@ -43,7 +43,16 @@ function _choose_editor
     end
 end
 
+function _git_editor
+    if [ $IS_ZELLIJ = 1 ]
+        echo "zellij edit"
+    else
+        _choose_editor --wait
+    end
+end
+
+
 # Set EDITOR
 set -gx EDITOR (_choose_editor --wait)
 
-# Maybe GIT_EDITOR?
+set -gx GIT_EDITOR (_git_editor)
