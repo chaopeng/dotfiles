@@ -13,7 +13,7 @@
 	light = false
   true-color = always
   line-numbers = true
-  features = arctic-fox
+  features = colibri
 
 [merge]
 	conflictstyle = diff3
@@ -28,39 +28,32 @@
   date = iso
 
 # Delta Themes
-[delta "arctic-fox"]
-	# author: https://github.com/anthony-halim
+[delta "colibri"]
+	# author: https://github.com/pablospe
+	# Based on woolly-mammoth: https://github.com/Kr1ss-XD.
+	commit-decoration-style = 130 box
 	dark = true
-	syntax-theme = base16
-	file-added-label = [+]
-	file-copied-label = [==]
-	file-modified-label = [*]
-	file-removed-label = [-]
-	file-renamed-label = [->]
-	file-style = omit
-	hunk-header-decoration-style = "#5E81AC" ul
-	hunk-header-file-style = blue ul bold
-	hunk-header-line-number-style = yellow box bold
-	hunk-header-style = file line-number syntax bold italic
-	plus-style = brightgreen
-	plus-emph-style = black green
-	minus-style = brightred
-	minus-emph-style = black red
+	file-decoration-style = "#606018" overline
+	file-added-label = [●]
+	file-copied-label = [C]
+	file-modified-label = [+]
+	file-removed-label = [⛌]
+	file-renamed-label = [→]
+	file-style = 232 bold 184
+	hunk-header-style = syntax bold italic 237
 	line-numbers = true
-	line-numbers-minus-style = brightred
-	line-numbers-plus-style = brightgreen
-	line-numbers-left-style = "#5E81AC"
-	line-numbers-right-style = "#5E81AC"
-	line-numbers-zero-style = "#4C566A"
+	line-numbers-left-format = "{nm:>1}┊"
+	line-numbers-left-style = red
+	line-numbers-minus-style = red bold
+	line-numbers-plus-style = green bold
+	line-numbers-right-format = " {np:>1}┊"
+	line-numbers-right-style = green
+	line-numbers-zero-style = "#545474" italic
+	minus-emph-style = normal "#80002a"
+	minus-style = normal "#5e0000"
+	plus-emph-style = syntax bold "#007e5e"
+	plus-style = syntax "#003500"
+	syntax-theme = 1337
+	whitespace-error-style = "#80002a" reverse
 	zero-style = syntax
-	whitespace-error-style = black bold
-	blame-code-style = syntax
-	blame-format = "{author:<18} {commit:<6} {timestamp:<15}"
-	blame-palette = "#2E3440" "#3B4252" "#434C5E"
-	merge-conflict-begin-symbol = ~
-	merge-conflict-end-symbol = ~
-	merge-conflict-ours-diff-header-style = yellow bold
-	merge-conflict-ours-diff-header-decoration-style = "#5E81AC" box
-	merge-conflict-theirs-diff-header-style = yellow bold
-	merge-conflict-theirs-diff-header-decoration-style = "#5E81AC" box
-
+	blame-format = "{author:<18} ({commit:>7}) ┊{timestamp:^16}┊ "
