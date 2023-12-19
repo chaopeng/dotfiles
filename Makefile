@@ -59,3 +59,7 @@ debian-install:
 	cargo install tealdeer
 	cargo install git-delta
 	go install github.com/jesseduffield/lazygit@latest
+
+pip-install:
+	pip install --user \
+		paramiko
