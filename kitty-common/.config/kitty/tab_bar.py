@@ -35,11 +35,11 @@ SOFT_SEP = "│"
 PADDING = " "
 USER_ICON = ""
 HOST_ICON = "󱡶"
-ACTIVE_TAB_ICON = ""
+ACTIVE_TAB_ICON = "❯"
 INACTIVE_TAB_ICON = ""
 BELL_ICON = "󰂚"
 ELLIPSIS = "..."
-ZELLIJ = "󰰶"
+ZELLIJ = "󰬇"
 VIM = ""
 
 # Colors
