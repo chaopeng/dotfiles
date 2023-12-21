@@ -2,6 +2,8 @@
 keybinds {
     // ctrl+o for session is conflict with vim a lot.
     unbind "Ctrl o"
+    // disable tmux mode.
+    unbind "Ctrl b"
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
