@@ -2,6 +2,9 @@
 # [include]
 #   path = <HOME>/.config/git/common.inc
 
+[pull]
+	rebase = true
+
 [core]
 	pager = delta
 
@@ -11,9 +14,9 @@
 [delta]
 	navigate = true
 	light = false
-  true-color = always
-  line-numbers = true
-  features = colibri
+	true-color = always
+	line-numbers = true
+	features = colibri
 
 [merge]
 	conflictstyle = diff3
