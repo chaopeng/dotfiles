@@ -24,11 +24,10 @@ arch-install:
 		tldr stow \
 		python-pipenv python-paramiko
 
-fish-install: SHELL:=/usr/bin/fish
 fish-install:
-	fisher install PatrickF1/fzf.fish
-	fisher install edc/bass
-	fisher install catppuccin/fish
+	fish -c "fisher install PatrickF1/fzf.fish"
+	fish -c "fisher install edc/bass"
+	fish -c "fisher install catppuccin/fish"
 
 mac-install:
 	sudo port selfupdate
