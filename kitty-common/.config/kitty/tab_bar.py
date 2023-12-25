@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Optional
 import logging
 import re
+import os
 
 from paramiko import SSHConfig
 
@@ -49,7 +50,9 @@ SSH_BG_COLOR = Color(30, 104, 199)
 SSH_ICON_BG_COLOR = Color(53, 132, 228)
 
 # Read ssh config
-ssh_config = SSHConfig.from_path(str(Path(SSH_CONFIG_FILE).expanduser()))
+ssh_config = None
+if os.path.isfile(Path(SSH_CONFIG_FILE)):
+    ssh_config = SSHConfig.from_path(str(Path(SSH_CONFIG_FILE).expanduser()))
 
 
 class Opts:
@@ -122,9 +125,10 @@ def _in_ssh(active_window: Window) -> Optional[SSHInfo]:
                 return SSHInfo(user_and_host[0], user_and_host[1])
 
             # it maybe just a shortcut defined in ssh config
-            host_config = ssh_config.lookup(arg)
-            if "user" in host_config:
-                return SSHInfo(host_config["user"], arg)
+            if ssh_config:
+                host_config = ssh_config.lookup(arg)
+                if "user" in host_config:
+                    return SSHInfo(host_config["user"], arg)
 
             maybe_host = arg
 
