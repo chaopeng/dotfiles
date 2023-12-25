@@ -1,4 +1,4 @@
-links:
+links: prestow-check
 ifeq ($(shell uname), Linux)
 	ls -d */ | grep -v ".*-mac/" | xargs stow --verbose --target=$$HOME --restow
 else ifeq ($(shell uname), Darwin)
@@ -58,3 +58,6 @@ debian-install:
 	cargo install tealdeer
 	cargo install git-delta
 	go install github.com/jesseduffield/lazygit@latest
+
+prestow-check:
+	./prestow-check.sh
