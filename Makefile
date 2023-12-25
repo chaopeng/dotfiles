@@ -21,7 +21,7 @@ arch-install:
 		lsd zellij xh ripgrep fd bat fzf starship \
 		lazygit git-delta \
 		kitty \
-		tldr stow \
+		tealdeer stow \
 		python-pipenv python-paramiko
 
 fish-install:
