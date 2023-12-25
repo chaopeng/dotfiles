@@ -22,7 +22,7 @@ arch-install:
 		lazygit git-delta \
 		kitty \
 		tldr stow \
-		python-pipenv
+		python-pipenv python-paramiko
 
 fish-install: SHELL:=/usr/bin/fish
 fish-install:
@@ -41,14 +41,14 @@ mac-install:
 		lazygit git-delta \
 		kitty \
 		tealdeer stow \
-		pipenv
+		pipenv py-paramiko
 
 debian-install:
 	sudo apt install \
 		fish curl wget \
 		fd-find bat jq fzf micro \
 		kitty stow \
-		pipenv
+		pipenv python3-paramiko
 	rustup update
 	cargo install cargo-update
 	cargo install lsd
@@ -59,7 +59,3 @@ debian-install:
 	cargo install tealdeer
 	cargo install git-delta
 	go install github.com/jesseduffield/lazygit@latest
-
-pip-install:
-	pip install --user \
-		paramiko
