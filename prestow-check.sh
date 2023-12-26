@@ -8,6 +8,7 @@
 # - ~/.config/kitty exists
 # - ~/.config/git exists
 # - ~/.config/lazygit exists
+# - ~/bin exists
 # - ~/.bashrc is backup and removed
 # - ~/.gitconfig is backup and removed
 ############################################################
@@ -29,5 +30,6 @@ mkdir_if_not_exists ~/.config/fish
 mkdir_if_not_exists ~/.config/kitty
 mkdir_if_not_exists ~/.config/git
 mkdir_if_not_exists ~/.config/lazygit
+mkdir_if_not_exists ~/bin
 fail_if_file_exists_but_a_link ~/.bashrc
 fail_if_file_exists_but_a_link ~/.gitconfig

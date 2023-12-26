@@ -22,7 +22,8 @@ arch-install:
 		lazygit git-delta \
 		kitty \
 		tealdeer stow \
-		python-pipenv python-paramiko
+		python-pipenv python-paramiko \
+		nerdfonts/bin/nerdfonts.sh -i ttf-firacode-nerd
 
 fish-install:
 	fish -c "fisher install PatrickF1/fzf.fish"
@@ -41,6 +42,7 @@ mac-install:
 		kitty \
 		tealdeer stow \
 		pipenv py-paramiko
+		nerdfonts/bin/nerdfonts.sh -i FiraCode
 
 debian-install:
 	sudo apt install \
@@ -58,6 +60,7 @@ debian-install:
 	cargo install tealdeer
 	cargo install git-delta
 	go install github.com/jesseduffield/lazygit@latest
+	nerdfonts/bin/nerdfonts.sh -i FiraCode
 
 prestow-check:
 	./prestow-check.sh
