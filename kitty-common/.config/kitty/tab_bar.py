@@ -54,8 +54,9 @@ TAB_TITLE_MAX_LENGTH = 30
 
 # Read ssh config
 ssh_config = None
-if os.path.isfile(Path(SSH_CONFIG_FILE)):
-    ssh_config = SSHConfig.from_path(str(Path(SSH_CONFIG_FILE).expanduser()))
+ssh_config_file = str(Path(SSH_CONFIG_FILE).expanduser())
+if os.path.isfile(ssh_config_file):
+    ssh_config = SSHConfig.from_path(ssh_config_file)
 
 
 class Opts:
@@ -109,6 +110,34 @@ class SSHInfo:
         self.host = host
 
 
+def find_host(ssh_config: SSHConfig, host: str) -> Optional[SSHInfo]:
+    """
+    find_host from SSHConfig, match hostname and host.
+    paramiko SSHConfig lookup does not work for host.
+    """
+
+    for it in ssh_config._config:
+        if "config" not in it:
+            continue
+        # there is no value if we don't have user in config.
+        if "user" not in it["config"]:
+            continue
+
+        user = it["config"]["user"]
+
+        if host in it["host"]:
+            # host must shorter than hostname.
+            return SSHInfo(user, host)
+
+        if "hostname" not in it["config"]:
+            continue
+
+        if it["config"]["hostname"] == host:
+            return SSHInfo(user, host)
+
+    return None
+
+
 def _in_ssh(active_window: Window) -> Optional[SSHInfo]:
     for p in active_window.child.foreground_processes:
         cmd = p["cmdline"]
@@ -132,10 +161,10 @@ def _in_ssh(active_window: Window) -> Optional[SSHInfo]:
                 return SSHInfo(user_and_host[0], user_and_host[1])
 
             # it maybe just a shortcut defined in ssh config
-            if ssh_config:
-                host_config = ssh_config.lookup(arg)
-                if "user" in host_config:
-                    return SSHInfo(host_config["user"], arg)
+            if ssh_config != None:
+                res = find_host(ssh_config, arg)
+                if res != None:
+                    return res
 
             maybe_host = arg
 
@@ -145,7 +174,7 @@ def _in_ssh(active_window: Window) -> Optional[SSHInfo]:
 
         maybe_host = maybe_host + "?"
 
-        return SSHConfig("?", maybe_host)
+        return SSHInfo("?", maybe_host)
 
     return None
 
