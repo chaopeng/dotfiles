@@ -24,13 +24,12 @@ arch-install:
 		tealdeer stow \
 		python-pipenv python-paramiko \
 		nerdfonts/bin/nerdfonts.sh -i ttf-firacode-nerd
-
-fish-install:
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install edc/bass"
 	fish -c "fisher install catppuccin/fish"
 
 mac-install:
+	./ensure-command.sh port
 	sudo port selfupdate
 	sudo port install \
 		go \
@@ -43,8 +42,14 @@ mac-install:
 		tealdeer stow \
 		pipenv py-paramiko
 		nerdfonts/bin/nerdfonts.sh -i FiraCode
+	fish -c "fisher install PatrickF1/fzf.fish"
+	fish -c "fisher install edc/bass"
+	fish -c "fisher install catppuccin/fish"
 
 debian-install:
+	./ensure-command.sh rustup
+	./ensure-command.sh cargo
+	./ensure-command.sh go
 	sudo apt install \
 		fish curl wget \
 		fd-find bat jq fzf micro \
@@ -61,6 +66,9 @@ debian-install:
 	cargo install git-delta
 	go install github.com/jesseduffield/lazygit@latest
 	nerdfonts/bin/nerdfonts.sh -i FiraCode
+	fish -c "fisher install PatrickF1/fzf.fish"
+	fish -c "fisher install edc/bass"
+	fish -c "fisher install catppuccin/fish"
 
 prestow-check:
 	./prestow-check.sh
