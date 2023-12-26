@@ -49,6 +49,9 @@ FILLED_ICON_BG_COLOR = Color(89, 89, 89)
 SSH_BG_COLOR = Color(30, 104, 199)
 SSH_ICON_BG_COLOR = Color(53, 132, 228)
 
+# fallback for old version kitty.
+TAB_TITLE_MAX_LENGTH = 30
+
 # Read ssh config
 ssh_config = None
 if os.path.isfile(Path(SSH_CONFIG_FILE)):
@@ -58,7 +61,11 @@ if os.path.isfile(Path(SSH_CONFIG_FILE)):
 class Opts:
     def __init__(self, draw_data: DrawData) -> None:
         opts = get_options()
-        self.tab_title_max_length = opts.tab_title_max_length
+        if hasattr(opts, "tab_title_max_length"):
+            self.tab_title_max_length = opts.tab_title_max_length
+        else:
+            self.tab_title_max_length = TAB_TITLE_MAX_LENGTH
+
         self.tab_bar_align = opts.tab_bar_align
 
         # active tab color related
