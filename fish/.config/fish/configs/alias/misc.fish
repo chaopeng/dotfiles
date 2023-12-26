@@ -8,3 +8,5 @@ alias m micro
 alias v nvim
 alias vi nvim
 alias vim nvim
+
+alias .. "cd .."
