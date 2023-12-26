@@ -70,6 +70,7 @@ function update_installed_nerdfonts() {
   echo "Latest nerd font version: $latest_version"
   echo ""
 
+  need_update_fc_cache=false
   for dir in $(ls $font_path | grep "^nerdfonts-"); do
     font_name="${dir#nerdfonts-}"
     version_file="$font_path/$dir/VERSION"
@@ -85,10 +86,15 @@ function update_installed_nerdfonts() {
     if [[ "$version" != "$latest_version" ]]; then
       echo "Update $font_name $version => $latest_version:"
       download_nerdfont_unzip_move_to_font_path $font_name $version
+      need_update_fc_cache=true
     else
       echo "$font_name is up-to-date."
     fi
   done
+
+  if [[ $need_update_fc_cache == true ]]; then
+    fc_cache_refresh
+  fi
 }
 
 function download_nerdfont_unzip_move_to_font_path() {
