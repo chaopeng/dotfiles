@@ -15,6 +15,12 @@
 # -r <font_name >: remove the font
 ############################################################
 
+# I don't know how to support WSL.
+if [[ -n "$WSL_DISTRO_NAME" ]]; then
+  echo "Does not support WSL"
+  exit 0
+fi
+
 font_path=""
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
