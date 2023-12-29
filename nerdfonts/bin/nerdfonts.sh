@@ -175,7 +175,7 @@ function help() {
   -L: list installed nerd fonts
   -u: update installed nerd fonts
   -i <font_name>: install the font
-  -r <font_name >: remove the font'
+  -r <font_name>: remove the font'
 }
 
 ensure_command_exists jq
