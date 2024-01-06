@@ -1,7 +1,7 @@
 {
     // Theme
     "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.iconTheme": "material-icon-theme",
 
     // Editor
     "editor.fontFamily": "'FiraCode Nerd Font Mono'",
