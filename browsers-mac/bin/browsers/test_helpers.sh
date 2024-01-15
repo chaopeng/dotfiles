@@ -21,6 +21,10 @@ function test_combine_with_delimiter() {
     echo "Test 4: replace with * keyword in grep"
     result="$(combine_with_delimiter "*" "apple" "orange" "banana with  spaces" "grape")"
     assert_equal "$result" "apple*orange*banana*with*spaces*grape"
+
+    echo "Test 5: url encode"
+    result="$(combine_with_delimiter "+" "(1+2)*3")"
+    assert_equal "$result" "%281%2B2%29*3"
 }
 
 # Helper function for assertion
