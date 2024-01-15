@@ -9,10 +9,9 @@ fi
 source ~/bin/browsers/helpers.sh
 
 # Construct the search query part of the URL 
-search_query="$(combine_with_delimiter '+' $@)"  # Start with empty search_query
+search_query="$(combine_with_delimiter '+' $@)"
 
 # Construct the full Google search URL
 url="https://www.google.com/search?q=${search_query}"
 
-# Output the complete Google search URL 
 open-chrome life $url
