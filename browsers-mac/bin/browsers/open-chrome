@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# This script is use to open chrome with given profile and url.
+#
+# This script only works on Mac.
+#
+# if given profile is "work" use "Chrome"
+# if given profile is "life" use "Chrome Beta"
+#
+# Use open with profile is complicated so I use different Browser.
+#
+# Usage: open-chrome work google.ca
+
+# Check if both arguments are provided
+if [ "$#" -lt 2 ]; then
+  echo "Error: Two arguments are required: <"work" | "life"> <URL>"
+  exit -1
+fi
+
+# Check if URL ($2) starts with http:// or https://
+if [[ ! "$2" =~ ^https?:// ]]; then
+  # Add http:// to the beginning
+  URL="http://${2}"
+else
+  # Keep URL as it is
+  URL="$2"
+fi
+
+# Open URL in selected browser
+if [ "$1" == "work" ]; then
+  open -a "Google Chrome" "$URL"
+elif [ "$1" == "life" ]; then
+  open -a "Google Chrome Beta" "$URL"
+else
+  echo "Error: Invalid first argument. Must be 'work' or 'life'."
+  exit -1
+fi
