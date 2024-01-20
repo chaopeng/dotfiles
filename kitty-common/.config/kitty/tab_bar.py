@@ -298,7 +298,7 @@ class Tab:
             self.right = ""
 
         if tab.needs_attention or tab.has_activity_since_last_focus:
-            self.bell_icon = BELL_ICON
+            self.bell_icon = BELL_ICON + PADDING
         else:
             # we don't need bell
             self.bell_icon = ""
