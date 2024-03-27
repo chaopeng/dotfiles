@@ -83,5 +83,7 @@
     "go.toolsManagement.autoUpdate": true,
 
     "rust-analyzer.check.allTargets": false,
-    "rust-analyzer.checkOnSave": false
+    "rust-analyzer.checkOnSave": false,
+    "terminal.integrated.defaultProfile.osx": "fish",
+    "security.workspace.trust.untrustedFiles": "open"
 }
