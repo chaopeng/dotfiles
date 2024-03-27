@@ -41,7 +41,7 @@ mac-install:
 		kitty \
 		tealdeer stow \
 		pipenv py-paramiko
-		nerdfonts/bin/nerdfonts.sh -i FiraCode
+	nerdfonts/bin/nerdfonts.sh -i FiraCode
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install edc/bass"
 	fish -c "fisher install catppuccin/fish"
