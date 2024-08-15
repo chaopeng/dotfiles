@@ -1,5 +1,7 @@
 set -xg PATH $HOME/bin $HOME/go/bin $HOME/.cargo/bin $PATH
 
 if [ $IS_MAC = 1 ]
-  set -xg PATH /opt/local/bin /opt/local/sbin $HOME/bin/browsers $PATH
+    set -xg PATH $HOME/bin/browsers $PATH
+    eval (/opt/homebrew/bin/brew shellenv)
 end
+

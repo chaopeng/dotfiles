@@ -15,7 +15,7 @@ end
 set -xg mycmds $mycmds (_color_mycmd "mkcd" "mkdir -p and then cd")
 
 function fish_reload --description "Simulate fish source configs"
-    for f in (ls $HOME/.config/fish/conf.d)
+    for f in (/bin/ls $HOME/.config/fish/conf.d)
         source $HOME/.config/fish/conf.d/$f
     end
     source $HOME/.config/fish/configs/main.fish
