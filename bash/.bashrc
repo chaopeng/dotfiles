@@ -26,9 +26,9 @@ fi
 # add $HOME/bin and $HOME/go/bin
 export PATH="$HOME/bin:$HOME/go/bin:$PATH"
 
-# add macports
+# add brew
 if [ "$(uname)" = "Darwin" ]; then
-	export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 eval "$(starship init bash)"
