@@ -23,7 +23,7 @@ arch-install:
 		kitty \
 		tealdeer stow \
 		python-pipenv python-paramiko \
-		nerdfonts/bin/nerdfonts.sh -i ttf-firacode-nerd
+		ttf-firacode-nerd
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install edc/bass"
 	fish -c "fisher install catppuccin/fish"
