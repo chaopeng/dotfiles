@@ -32,4 +32,4 @@ keybind = ctrl+k=clear_screen
 # select and scrollback
 keybind = ctrl+shift+a=unbind
 keybind = ctrl+a=select_all
-keybind = ctrl+s=write_scrollback_file:open
+keybind = ctrl+shift+s=write_scrollback_file:open
