@@ -1,0 +1,35 @@
+theme = catppuccin-macchiato
+
+font-family = FiraCode Nerd Font Mono
+font-style = Reg
+font-size = 13
+
+shell-integration = fish
+shell-integration-features = cursor
+
+command = /opt/homebrew/bin/fish
+
+window-padding-x = 4
+window-padding-y = 2
+
+copy-on-select = clipboard
+
+# split
+keybind = ctrl+shift+o=unbind
+keybind = ctrl+shift+e=unbind
+keybind = ctrl+shift+l=new_split:right
+keybind = ctrl+shift+-=new_split:down
+
+# jump to
+# keybind = ctrl+shift+page_up=unbind
+# keybind = ctrl+shift+page_down=unbind
+# keybind = ctrl+up=jump_to_prompt:-1
+# keybind = ctrl+down=jump_to_prompt:1
+
+# clear
+keybind = ctrl+k=clear_screen
+
+# select and scrollback
+# keybind = ctrl+shift+a=unbind
+# keybind = ctrl+a=select_all
+# keybind = ctrl+shift+s=write_scrollback_file:open
