@@ -7,5 +7,12 @@ if [ $IS_MAC = 1 ]
     if not which code
         set -xg PATH "/Applications/Visual Studio Code.app/Contents/Resources/app/bin" $PATH
     end
+
+    # I have use pyenv on Mac, but not other systems.
+    if which pyenv
+        set -Ux PYENV_ROOT $HOME/.pyenv
+        fish_add_path $PYENV_ROOT/bin
+        pyenv init - fish | source
+    end
 end
 
