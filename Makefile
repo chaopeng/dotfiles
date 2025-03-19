@@ -20,27 +20,23 @@ arch-install:
 		git curl wget jq \
 		lsd zellij xh ripgrep fd bat fzf starship \
 		lazygit git-delta \
-		kitty \
-		tealdeer stow \
-		python-pipenv python-paramiko
+		ghostty \
+		tealdeer stow
 	nerdfonts/bin/nerdfonts.sh -i ttf-firacode-nerd
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install edc/bass"
 	fish -c "fisher install catppuccin/fish"
 
 mac-install:
-	./ensure-command.sh port
-	sudo port selfupdate
-	sudo port install \
-		go \
-		fish \
+	./ensure-command.sh brew
+	brew install --cask ghostty
+	brew install go \
+		fish fisher \
 		neovim micro \
-		curl wget jq \
+		git curl wget jq \
 		lsd zellij xh ripgrep fd bat fzf starship \
 		lazygit git-delta \
-		kitty \
-		tealdeer stow \
-		pipenv py-paramiko
+		tealdeer stow
 	nerdfonts/bin/nerdfonts.sh -i FiraCode
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install edc/bass"
