@@ -1,4 +1,5 @@
 theme = catppuccin-macchiato
+cursor-invert-fg-bg = true
 
 font-family = FiraCode Nerd Font Mono
 font-style = Reg
