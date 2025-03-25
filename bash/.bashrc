@@ -20,7 +20,9 @@ fi
 
 # add cargo paths
 if [ -d "$HOME/.cargo" ]; then
-	. "$HOME/.cargo/env"
+	if [ -f "$HOME/.cargo/env" ]; then
+    	. "$HOME/.cargo/env"
+	fi
 fi
 
 # add $HOME/bin and $HOME/go/bin
