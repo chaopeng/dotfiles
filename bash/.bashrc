@@ -19,14 +19,12 @@ if [ -d "$HOME/.config/bash" ]; then
 fi
 
 # add cargo paths
-if [ -d "$HOME/.cargo" ]; then
-	if [ -f "$HOME/.cargo/env" ]; then
-    	. "$HOME/.cargo/env"
-	fi
+if [ -f "$HOME/.cargo/env" ]; then
+	. "$HOME/.cargo/env"
 fi
 
 # add $HOME/bin and $HOME/go/bin
-export PATH="$HOME/bin:$HOME/go/bin:$PATH"
+export PATH="$HOME/bin:$HOME/go/bin:$HOME/.cargo/bin:$PATH"
 
 # add brew
 if [ "$(uname)" = "Darwin" ]; then
@@ -34,3 +32,7 @@ if [ "$(uname)" = "Darwin" ]; then
 fi
 
 eval "$(starship init bash)"
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
