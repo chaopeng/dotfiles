@@ -1,4 +1,7 @@
-set -xg PATH $HOME/bin $HOME/go/bin $HOME/.cargo/bin $PATH
+fish_add_path -g $HOME/bin
+fish_add_path -g $HOME/go/bin
+fish_add_path -g $HOME/.cargo/bin
+fish_add_path -g $HOME/.npm/bin
 
 if [ $IS_MAC = 1 ]
     set -xg PATH $HOME/bin/browsers $PATH
@@ -16,3 +19,6 @@ if [ $IS_MAC = 1 ]
     end
 end
 
+# Added by LM Studio CLI (lms)
+fish_add_path -g $HOME/.lmstudio/bin
+# End of LM Studio CLI section
