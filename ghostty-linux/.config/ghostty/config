@@ -1,4 +1,4 @@
-theme = catppuccin-macchiato
+theme = Catppuccin Macchiato
 cursor-invert-fg-bg = true
 
 font-family = FiraCode Nerd Font Mono
@@ -35,3 +35,4 @@ keybind = ctrl+k=clear_screen
 keybind = ctrl+shift+a=unbind
 keybind = ctrl+a=select_all
 keybind = ctrl+shift+s=write_scrollback_file:open
+keybind = shift+enter=text:\x1b\r
