@@ -1,8 +1,7 @@
 git:
-  paging:
-    colorArg: always
-    useConfig: true
-
+  pagers:
+    - colorArg: always
+      useConfig: true
 gui:
   # catppuccin/themes-mergable/mocha/blue
   theme:
