@@ -13,10 +13,8 @@ This also includes some softwares installation:
 
 ```sh
 make arch-install
-make fish-install
 ```
 
 <!-- xrefs -->
 
 [dotman]: hhttps://github.com/elmhuangyu/dotman
-
