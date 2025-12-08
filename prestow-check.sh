@@ -10,7 +10,6 @@
 # - ~/.config/lazygit exists
 # - ~/bin exists
 # - ~/bin/browsers exists on Mac
-# - ~/Library/Application Support/Code/User exists on Mac
 # - ~/.bashrc is backup and removed
 ############################################################
 
@@ -35,7 +34,6 @@ mkdir_if_not_exists ~/bin
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
   mkdir_if_not_exists ~/bin/browsers
-  mkdir_if_not_exists ~/Library/Application\ Support/Code/User/
 fi
 
 fail_if_file_exists_but_a_link ~/.bashrc
