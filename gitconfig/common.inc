@@ -1,4 +1,4 @@
-# Include this file
+# Include this file, in ~/.config/git/config or ~/.gitconfig
 # [include]
 #   path = <HOME>/.config/git/common.inc
 
@@ -28,7 +28,7 @@
 	defaultBranch = main
 
 [log]
-  date = iso
+	date = iso
 
 # Delta Themes
 [delta "colibri"]
