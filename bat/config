@@ -1,4 +1,2 @@
 --theme=Catppuccin-mocha
-
 --map-syntax='*.cml:JSON'
-
