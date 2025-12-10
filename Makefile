@@ -19,7 +19,7 @@ arch-install:
 	go install github.com/nao1215/gup@latest
 	go install github.com/chaopeng/to@latest
 	go install github.com/elmhuangyu/dotman@latest
-	nerdfonts/bin/nerdfonts.sh -i ttf-firacode-nerd
+	nerdfonts/nerdfonts.sh -i ttf-firacode-nerd
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install edc/bass"
 	fish -c "fisher install catppuccin/fish"
@@ -37,7 +37,7 @@ mac-install:
 	go install github.com/nao1215/gup@latest
 	go install github.com/chaopeng/to@latest
 	go install github.com/elmhuangyu/dotman@latest
-	nerdfonts/bin/nerdfonts.sh -i FiraCode
+	nerdfonts/nerdfonts.sh -i FiraCode
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install edc/bass"
 	fish -c "fisher install catppuccin/fish"
@@ -62,7 +62,7 @@ debian-install:
 	go install github.com/jesseduffield/lazygit@latest
 	go install github.com/chaopeng/to@latest
 	go install github.com/elmhuangyu/dotman@latest
-	nerdfonts/bin/nerdfonts.sh -i FiraCode
+	nerdfonts/nerdfonts.sh -i FiraCode
 	fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 	fish -c "fisher install PatrickF1/fzf.fish"
 	fish -c "fisher install edc/bass"
