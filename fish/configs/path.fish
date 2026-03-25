@@ -18,7 +18,3 @@ if [ $IS_MAC = 1 ]
         pyenv init - fish | source
     end
 end
-
-# Added by LM Studio CLI (lms)
-fish_add_path -g $HOME/.lmstudio/bin
-# End of LM Studio CLI section

@@ -1,6 +1,6 @@
 # Choose editor is complicated!
 function _choose_editor
-    set -l term_editor nvim
+    set -l term_editor micro
     argparse -n _choose_editor wait -- $argv
 
     # If I am already in vscode, keep me is vscode. This also works in ssh.
@@ -13,13 +13,8 @@ function _choose_editor
         return
     end
 
-    # If I am in Zellij, I may want to stay in Zellij, pop editing or new pane,
-    # I don't know. micro have many keybinding conflict with Zellij, before I
-    # resolve, use nvim.
-    # Also Zellij hold DISPLAY from the terminal it started, use code may open
-    # a window in unexpeted window.
     if [ $IS_ZELLIJ = 1 ]
-        echo nvim
+        echo $term_editor
         return
     end
 
