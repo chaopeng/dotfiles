@@ -15,7 +15,8 @@ $battery\
 $os\
 $shell\
 $username\
-$hostname\
+${custom.ss_symbol}\
+${custom.ss_hostname}\
 $directory\
 $git_branch\
 $git_commit\
@@ -43,11 +44,19 @@ style = "bold blue"
 truncation_length = 2
 fish_style_pwd_dir_length = 1
 
-[hostname]
-ssh_symbol = " "
-trim_at = "."
+[custom.ss_symbol]
+shell = "bash"
+command = "echo -e '\U0000f0c2'"
+when = "test -n \"$SSH_CONNECTION\" || test -n \"$SSH_CLIENT\" || test -n \"$SSH_TTY\""
+style = "green bold"
+format = " [$output]($style) "
+
+[custom.ss_hostname]
+shell = "bash"
+command = "echo ${SS_HOSTNAME:-$(hostname | cut -d. -f1)}"
+when = "test -n \"$SS_HOSTNAME\" || test -n \"$SSH_CONNECTION\" || test -n \"$SSH_CLIENT\" || test -n \"$SSH_TTY\""
 style = "purple"
-format = "[$ssh_symbol](green bold)[$hostname]($style) in "
+format = " [$output]($style) in "
 
 [time]
 disabled = false
