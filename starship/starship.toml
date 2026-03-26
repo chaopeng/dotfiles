@@ -56,7 +56,7 @@ shell = "bash"
 command = "echo ${SS_HOSTNAME:-$(hostname | cut -d. -f1)}"
 when = "test -n \"$SS_HOSTNAME\" || test -n \"$SSH_CONNECTION\" || test -n \"$SSH_CLIENT\" || test -n \"$SSH_TTY\""
 style = "purple"
-format = " [$output]($style) in "
+format = "[$output]($style) in "
 
 [time]
 disabled = false
