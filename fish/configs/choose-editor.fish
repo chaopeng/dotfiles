@@ -1,9 +1,19 @@
 # Choose editor is complicated!
 function _choose_editor
-    set -l term_editor micro
+    set -x term_editor micro
+
     argparse -n _choose_editor wait -- $argv
 
     # If I am already in vscode, keep me is vscode. This also works in ssh.
+    if [ $IS_ANTIGRAVITY = 1 ]
+        if test -n "$_flag_wait"
+            echo "antigravity -w"
+        else
+            echo antigravity
+        end
+        return
+    end
+    
     if [ $IS_VSCODE = 1 ]
         if test -n "$_flag_wait"
             echo "code -w"

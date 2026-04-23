@@ -22,6 +22,14 @@ if [ "$TERM_PROGRAM" = vscode ]
     set -xg IS_VSCODE 1
 end
 
+# IS_ANTIGRAVITY
+set -xg IS_ANTIGRAVITY 0
+if [ -n "$ANTIGRAVITY_CLI_ALIAS" ]
+    set -xg IS_ANTIGRAVITY 1
+end
+
+
+
 # IS_ZELLIJ
 set -xg IS_ZELLIJ 0
 if test -n "$ZELLIJ"
