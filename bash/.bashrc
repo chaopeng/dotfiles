@@ -41,10 +41,6 @@ if [ "$(uname)" = "Darwin" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-if [ -d "$HOME/.lmstudio/bin" ]; then
-  export PATH="$PATH:$HOME/.lmstudio/bin"
-fi
-
 export NVM_DIR="$HOME/.config/nvm"
 if [ -s "$NVM_DIR/nvm.sh" ]; then
   source "$NVM_DIR/nvm.sh" # This loads nvm
