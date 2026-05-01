@@ -3,5 +3,11 @@
     "enabled": true,
     "saveToDisk": false,
     "stdout": false
+  },
+  "niriWindows": {
+    "enabled": true
+  },
+  "emojiLauncher": {
+    "enabled": true
   }
 }
