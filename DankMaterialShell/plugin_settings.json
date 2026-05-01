@@ -1,0 +1,7 @@
+{
+  "dmsScreenshot": {
+    "enabled": true,
+    "saveToDisk": false,
+    "stdout": false
+  }
+}
