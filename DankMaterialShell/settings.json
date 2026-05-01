@@ -482,9 +482,9 @@
           "enabled": true
         }
       ],
-      "spacing": 4,
+      "spacing": 0,
       "innerPadding": 4,
-      "bottomGap": 0,
+      "bottomGap": -2,
       "transparency": 1,
       "widgetTransparency": 1,
       "squareCorners": false,
@@ -541,7 +541,7 @@
       ],
       "centerWidgets": [],
       "rightWidgets": [],
-      "spacing": 4,
+      "spacing": 0,
       "innerPadding": 10,
       "bottomGap": 0,
       "transparency": 1,
