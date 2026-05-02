@@ -1,16 +1,14 @@
 binds {
-    Ctrl+Alt+Delete hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
     Ctrl+Shift+R hotkey-overlay-title="Rename Workspace" { spawn "dms" "ipc" "call" "workspace-rename" "open"; }
     Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
     Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
     Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
     Mod+Comma hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
-    Mod+M hotkey-overlay-title="Task Manager" { spawn "dms" "ipc" "call" "processlist" "focusOrToggle"; }
     Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-    Mod+Shift+N hotkey-overlay-title="Notepad" { spawn "dms" "ipc" "call" "notepad" "toggle"; }
     Mod+Shift+W hotkey-overlay-title="Create window rule" { spawn "dms" "ipc" "call" "window-rules" "toggle"; }
     Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
+    Super+F4 hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Super+P hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "3"; }
@@ -111,10 +109,12 @@ binds {
     Mod+W { toggle-column-tabbed-display; }
     Mod+WheelScrollLeft { focus-column-left; }
     Mod+WheelScrollRight { focus-column-right; }
+    Super+Ctrl+F1 repeat=false { close-window; }
     Super+Ctrl+Left { move-column-left; }
     Super+Ctrl+Right { move-column-right; }
+    Super+Ctrl+Shift+F { fullscreen-window; }
     Super+Down { focus-window-down; }
-    Super+F { fullscreen-window; }
+    Super+F5 { maximize-column; }
     Super+Shift+F { toggle-window-floating; }
     Super+Up { focus-window-up; }
     Mod+Shift+P { power-off-monitors; }
@@ -123,9 +123,18 @@ binds {
     Print { screenshot; }
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
-    Mod+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
+    Super+F1 hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
+    Super+F2 hotkey-overlay-title="gemini" { spawn "sh" "-c" " ~/.config/niri/scripts/gemini-jump.sh"; }
+    Super+F3 hotkey-overlay-title="obsidian" { spawn "sh" "-c" " ~/.config/niri/scripts/obsidian-jump.sh"; }
+    Super+F6 hotkey-overlay-title="v-50-50" { spawn "sh" "-c" "~/.config/niri/scripts/v-50-50.sh"; }
+    Super+F7 hotkey-overlay-title="h-50-50" { spawn "sh" "-c" "~/.config/niri/scripts/split-50-50.sh"; }
+    Super+Shift+G hotkey-overlay-title="gemini" { spawn "sh" "-c" " ~/.config/niri/scripts/gemini-jump.sh"; }
+    Super+Shift+M hotkey-overlay-title="missioncenter" { spawn "missioncenter"; }
+    Super+Shift+O hotkey-overlay-title="obsidian" { spawn "sh" "-c" " ~/.config/niri/scripts/obsidian-jump.sh"; }
+    Super+Shift+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
     Mod+D repeat=false { toggle-overview; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Tab repeat=false { toggle-overview; }
+    Super+F8 repeat=false { toggle-overview; }
 }

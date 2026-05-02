@@ -2,6 +2,12 @@
 // "/-" comments out the following node.
 // Check the wiki for a full description of the configuration:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction
+
+workspace "1"
+workspace "2"
+workspace "3"
+workspace "Notes"
+
 config-notification {
     disable-failed
 }
@@ -203,6 +209,12 @@ animations {
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "Notes"
+    default-column-width { proportion 0.8; }
+}
+
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
 window-rule {
