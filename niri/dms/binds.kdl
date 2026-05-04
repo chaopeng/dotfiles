@@ -20,8 +20,6 @@ binds {
     XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
     XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
     XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
-    XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -134,6 +132,8 @@ binds {
     Super+Shift+M hotkey-overlay-title="missioncenter" { spawn "missioncenter"; }
     Super+Shift+O hotkey-overlay-title="obsidian" { spawn "sh" "-c" " ~/.config/niri/scripts/obsidian-jump.sh"; }
     Super+Shift+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
+    XF86MonBrightnessDown allow-when-locked=true hotkey-overlay-title="brightness -5" { spawn "sh" "-c" "~/.config/niri/scripts/brightness.sh -"; }
+    XF86MonBrightnessUp allow-when-locked=true hotkey-overlay-title="brightness +5" { spawn "sh" "-c" "~/.config/niri/scripts/brightness.sh +"; }
     Mod+D repeat=false { toggle-overview; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }
