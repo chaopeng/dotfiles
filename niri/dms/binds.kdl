@@ -8,6 +8,7 @@ binds {
     Mod+Shift+W hotkey-overlay-title="Create window rule" { spawn "dms" "ipc" "call" "window-rules" "toggle"; }
     Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
     Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
+    Super+Ctrl+F2 hotkey-overlay-title="Audio Output: Cycle" { spawn "dms" "ipc" "call" "audio" "cycleoutput"; }
     Super+F4 hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Super+P hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
     Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
@@ -121,6 +122,7 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Ctrl+XF86Launch1 { screenshot-screen; }
     Print { screenshot; }
+    Super+F11 { screenshot; }
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
     Super+F1 hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
