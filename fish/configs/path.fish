@@ -2,6 +2,7 @@ fish_add_path -g $HOME/bin
 fish_add_path -g $HOME/go/bin
 fish_add_path -g $HOME/.cargo/bin
 fish_add_path -g $HOME/.npm/bin
+fish_add_path -g $HOME/.local/bin # uv
 
 if [ $IS_MAC = 1 ]
     set -xg PATH $HOME/bin/browsers $PATH
