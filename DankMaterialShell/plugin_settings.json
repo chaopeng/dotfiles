@@ -2,7 +2,9 @@
   "dmsScreenshot": {
     "enabled": true,
     "saveToDisk": false,
-    "stdout": false
+    "stdout": false,
+    "mode": "interactive",
+    "copyToClipboard": true
   },
   "niriWindows": {
     "enabled": true

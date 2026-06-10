@@ -65,7 +65,7 @@
   "selectedGpuIndex": 0,
   "enabledGpuPciIds": [],
   "showSystemTray": true,
-  "systemTrayIconTintMode": "primary",
+  "systemTrayIconTintMode": "monochrome",
   "systemTrayIconTintSaturation": 50,
   "systemTrayIconTintStrength": 135,
   "showClock": true,
@@ -207,10 +207,10 @@
   "networkPreference": "auto",
   "iconTheme": "Tela-black",
   "cursorSettings": {
-    "theme": "Breeze_Light",
+    "theme": "Nordic-cursors",
     "size": 24,
     "niri": {
-      "hideWhenTyping": false,
+      "hideWhenTyping": true,
       "hideAfterInactiveMs": 0
     },
     "hyprland": {
