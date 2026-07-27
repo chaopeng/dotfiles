@@ -17,3 +17,10 @@ if test -f $FISH_PRIVATE_CFG_PATH/main.fish
 end
 
 source $FISH_CFG_PATH/fix-completions.fish
+
+# Disable TTY software flow control in Kitty so Ctrl+s and Ctrl+q pass through cleanly
+if status is-interactive; and test "$IS_KITTY" = 1
+    stty -ixon 2>/dev/null
+end
+
+

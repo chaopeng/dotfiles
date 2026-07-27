@@ -41,3 +41,10 @@ set -xg IS_WSL 0
 if test -n "$WSLENV"
     set -xg IS_WSL 1
 end
+
+# IS_KITTY
+set -xg IS_KITTY 0
+if test "$TERM_PROGRAM" = kitty -o -n "$KITTY_WINDOW_ID"
+    set -xg IS_KITTY 1
+end
+
