@@ -7,9 +7,9 @@ function _choose_editor
     # If I am already in vscode, keep me is vscode. This also works in ssh.
     if [ $IS_ANTIGRAVITY = 1 ]
         if test -n "$_flag_wait"
-            echo "antigravity -w"
+            echo "antigravity-ide -w"
         else
-            echo antigravity
+            echo antigravity-ide
         end
         return
     end
