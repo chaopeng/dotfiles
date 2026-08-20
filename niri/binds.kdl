@@ -81,7 +81,7 @@ binds {
     Ctrl+Print { screenshot-screen; }
     Ctrl+XF86Launch1 { screenshot-screen; }
     Print { screenshot; }
-    Super+F11 { screenshot; }
+    Super+F11 hotkey-overlay-title="Screenshot Region" { spawn "noctalia" "msg" "screenshot-region"; }
     XF86Launch1 { screenshot; }
 
     // Window / Column Layout & Actions
