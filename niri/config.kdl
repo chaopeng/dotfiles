@@ -150,7 +150,7 @@ layout {
     struts {
     }
 }
-layer-rule {
+/-layer-rule {
     match namespace="^quickshell$"
     place-within-backdrop true
 }
@@ -165,6 +165,7 @@ overview {
 // See the binds section below for more spawn examples.
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "fcitx5" "-d"
+spawn-at-startup "noctalia"
 
 environment {
     XDG_CURRENT_DESKTOP "niri"
@@ -265,7 +266,7 @@ window-rule {
     open-floating true
 }
 // Open dms windows as floating by default
-window-rule {
+/-window-rule {
     // match app-id=r#"org.quickshell$"#
     match app-id=r#"com.danklinux.dms$"#
     open-floating true
@@ -284,12 +285,10 @@ recent-windows {
     }
 }
 
-// Include dms files
-include "dms/colors.kdl"
-include "dms/layout.kdl"
-include "dms/alttab.kdl"
-include "dms/binds.kdl"
-include "dms/outputs.kdl"
-include "dms/cursor.kdl"
-
-include "dms/windowrules.kdl"
+// Include config files
+include "modules/colors.kdl"
+include "modules/layout.kdl"
+include "modules/alttab.kdl"
+include "binds.kdl"
+include "modules/outputs.kdl"
+include "modules/cursor.kdl"

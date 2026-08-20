@@ -1,7 +1,8 @@
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
       useConfig: true
+      type: rawGit
 gui:
   # catppuccin/themes-mergable/mocha/blue
   theme:

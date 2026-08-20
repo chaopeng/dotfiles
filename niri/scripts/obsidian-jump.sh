@@ -7,14 +7,18 @@ WORKSPACE_NAME="Notes"
 
 # 1. Check and get Obsidian's numerical ID
 get_id() {
-    niri msg -j windows | jq -r ".[] | select(.app_id == \"$APP_ID\") | .id" | head -n 1
+    niri msg -j windows | jq -r ".[] | select(.app_id != null and (.app_id | test(\"$APP_ID\"; \"i\"))) | .id" | head -n 1
 }
 
 WIN_ID=$(get_id)
 
 # 2. Start if not exists
 if [ -z "$WIN_ID" ] || [ "$WIN_ID" == "null" ]; then
-    systemctl --user start obsidian.service
+    if command -v gtk-launch &>/dev/null; then
+        gtk-launch obsidian
+    else
+        obsidian &
+    fi
     
     # Poll and wait for window to appear and get new ID
     for i in {1..20}; do

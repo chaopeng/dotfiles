@@ -1,0 +1,5 @@
+cursor {
+    xcursor-theme "Nordic-cursors"
+    xcursor-size 24
+    hide-when-typing
+}

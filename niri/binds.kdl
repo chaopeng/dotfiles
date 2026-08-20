@@ -1,25 +1,45 @@
 binds {
-    Ctrl+XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "decrement" "3"; }
-    Ctrl+XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "increment" "3"; }
-    Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "call" "lock" "lock"; }
-    Mod+Comma hotkey-overlay-title="Settings" { spawn "dms" "ipc" "call" "settings" "focusOrToggle"; }
-    Mod+N hotkey-overlay-title="Notification Center" { spawn "dms" "ipc" "call" "notifications" "toggle"; }
-    Mod+Shift+W hotkey-overlay-title="Create window rule" { spawn "dms" "ipc" "call" "window-rules" "toggle"; }
-    Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-    Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
-    Super+Alt+Shift+R hotkey-overlay-title="Rename Workspace" { spawn "dms" "ipc" "call" "workspace-rename" "open"; }
-    Super+Ctrl+F2 hotkey-overlay-title="Audio Output: Cycle" { spawn "dms" "ipc" "call" "audio" "cycleoutput"; }
-    Super+F4 hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-    Super+P hotkey-overlay-title="Application Launcher" { spawn "dms" "ipc" "call" "spotlight" "toggle"; }
-    Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "3"; }
-    XF86AudioMicMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "micmute"; }
-    XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
-    XF86AudioNext allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "next"; }
-    XF86AudioPause allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
-    XF86AudioPlay allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "playPause"; }
-    XF86AudioPrev allow-when-locked=true { spawn "dms" "ipc" "call" "mpris" "previous"; }
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "3"; }
+    // === Noctalia Shell IPC Binds ===
+    // Application Launcher
+    Mod+Space hotkey-overlay-title="Application Launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Super+F4 hotkey-overlay-title="Application Launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Super+P hotkey-overlay-title="Application Launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+
+    // Control Center
+    Mod+Shift+C hotkey-overlay-title="Control Center" { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+
+    // Lockscreen
+    Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn "noctalia" "msg" "session" "lock"; }
+
+    // Notification Center
+    Mod+N hotkey-overlay-title="Notification Center" { spawn "noctalia" "msg" "panel-toggle" "control-center" "notifications"; }
+
+    // Clipboard Manager
+    Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+
+    // Wallpaper Browser
+    Mod+Y hotkey-overlay-title="Browse Wallpapers" { spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
+
+    // Settings
+    Mod+Comma hotkey-overlay-title="Settings" { spawn "noctalia" "msg" "settings-toggle"; }
+
+    // Power Menu / Session
+    Super+X hotkey-overlay-title="Power Menu: Toggle" { spawn "noctalia" "msg" "panel-toggle" "control-center" "power"; }
+
+    // Audio & Volume controls (WirePlumber)
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "3%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1.5" "@DEFAULT_AUDIO_SINK@" "3%-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    Super+Ctrl+F2 hotkey-overlay-title="Audio Output: Cycle" { spawn "noctalia" "msg" "plugin" "blackbartblues/audio-switcher:service" "all" "cycle-output"; }
+
+    // Media Controls (Noctalia IPC)
+    XF86AudioPlay allow-when-locked=true { spawn "noctalia" "msg" "media" "play"; }
+    XF86AudioPause allow-when-locked=true { spawn "noctalia" "msg" "media" "pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "noctalia" "msg" "media" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "noctalia" "msg" "media" "previous"; }
+
+    // Workspace Navigation
     Mod+1 { focus-workspace 1; }
     Mod+2 { focus-workspace 2; }
     Mod+3 { focus-workspace 3; }
@@ -54,8 +74,17 @@ binds {
     Super+Alt+Down { focus-workspace-down; }
     Super+Alt+Up { focus-workspace-up; }
     Super+U { focus-workspace-down; }
+
+    // Screenshots
     Alt+Print { screenshot-window; }
     Alt+XF86Launch1 { screenshot-window; }
+    Ctrl+Print { screenshot-screen; }
+    Ctrl+XF86Launch1 { screenshot-screen; }
+    Print { screenshot; }
+    Super+F11 { screenshot; }
+    XF86Launch1 { screenshot; }
+
+    // Window / Column Layout & Actions
     Mod+BracketRight { consume-or-expel-window-right; }
     Mod+C { center-column; }
     Mod+Ctrl+C { center-visible-columns; }
@@ -117,23 +146,20 @@ binds {
     Super+Shift+F { toggle-window-floating; }
     Super+Up { focus-window-up; }
     Mod+Shift+P { power-off-monitors; }
-    Ctrl+Print { screenshot-screen; }
-    Ctrl+XF86Launch1 { screenshot-screen; }
-    Print { screenshot; }
-    Super+F11 { screenshot; }
-    XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
+
+    // Custom Apps & Scripts
     Super+F1 hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
-    Super+F2 hotkey-overlay-title="gemini" { spawn "sh" "-c" " ~/.config/niri/scripts/gemini-jump.sh"; }
-    Super+F3 hotkey-overlay-title="obsidian" { spawn "sh" "-c" " ~/.config/niri/scripts/obsidian-jump.sh"; }
+    Super+F2 hotkey-overlay-title="gemini" { spawn "sh" "-c" "~/.config/niri/scripts/gemini-jump.sh"; }
+    Super+F3 hotkey-overlay-title="obsidian" { spawn "sh" "-c" "~/.config/niri/scripts/obsidian-jump.sh"; }
     Super+F6 hotkey-overlay-title="v-50-50" { spawn "sh" "-c" "~/.config/niri/scripts/v-50-50.sh"; }
     Super+F7 hotkey-overlay-title="h-50-50" { spawn "sh" "-c" "~/.config/niri/scripts/split-50-50.sh"; }
-    Super+Shift+G hotkey-overlay-title="gemini" { spawn "sh" "-c" " ~/.config/niri/scripts/gemini-jump.sh"; }
+    Super+Shift+G hotkey-overlay-title="gemini" { spawn "sh" "-c" "~/.config/niri/scripts/gemini-jump.sh"; }
     Super+Shift+M hotkey-overlay-title="missioncenter" { spawn "missioncenter"; }
-    Super+Shift+O hotkey-overlay-title="obsidian" { spawn "sh" "-c" " ~/.config/niri/scripts/obsidian-jump.sh"; }
+    Super+Shift+O hotkey-overlay-title="obsidian" { spawn "sh" "-c" "~/.config/niri/scripts/obsidian-jump.sh"; }
     Super+Shift+T hotkey-overlay-title="Open Terminal" { spawn "ghostty"; }
-    XF86MonBrightnessDown allow-when-locked=true hotkey-overlay-title="brightness -5" { spawn "sh" "-c" "~/.config/niri/scripts/brightness.sh -"; }
-    XF86MonBrightnessUp allow-when-locked=true hotkey-overlay-title="brightness +5" { spawn "sh" "-c" "~/.config/niri/scripts/brightness.sh +"; }
+    XF86MonBrightnessDown allow-when-locked=true hotkey-overlay-title="brightness -5" { spawn "noctalia" "msg" "brightness-down" "5"; }
+    XF86MonBrightnessUp allow-when-locked=true hotkey-overlay-title="brightness +5" { spawn "noctalia" "msg" "brightness-up" "5"; }
     Mod+D repeat=false { toggle-overview; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }
