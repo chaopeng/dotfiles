@@ -2,21 +2,8 @@
 # ~/.bashrc
 #
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
 ###########################################################
-# Keep This File Simple
-
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-
-# source fils in ~/.config/bash/
-if [ -d "$HOME/.config/bash" ]; then
-  for f in $HOME/.config/bash/*; do
-    source $f
-  done
-fi
+# Environment & PATH modifications (All shells)
 
 # Path modifications
 if [ -d "$HOME/.cargo" ]; then
@@ -45,9 +32,26 @@ export NVM_DIR="$HOME/.config/nvm"
 if [ -s "$NVM_DIR/nvm.sh" ]; then
   source "$NVM_DIR/nvm.sh" # This loads nvm
 fi
+
+# Source files in ~/.config/bash/ (e.g. linux.bashrc)
+if [ -d "$HOME/.config/bash" ]; then
+  for f in $HOME/.config/bash/*; do
+    source "$f"
+  done
+fi
+
+###########################################################
+# Return early if not running interactively
+[[ $- != *i* ]] && return
+
+###########################################################
+# Interactive Shell Setup Only
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
 if [ -s "$NVM_DIR/bash_completion" ]; then
   source "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 fi
 
 eval "$(starship init bash)"
-
