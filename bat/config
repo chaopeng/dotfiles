@@ -1,2 +1,2 @@
---theme=Catppuccin-mocha
+--theme='Catppuccin Mocha'
 --map-syntax='*.cml:JSON'
