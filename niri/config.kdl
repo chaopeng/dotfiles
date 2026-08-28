@@ -286,9 +286,9 @@ recent-windows {
 }
 
 // Include config files
+include "binds.kdl"
 include "modules/colors.kdl"
 include "modules/layout.kdl"
 include "modules/alttab.kdl"
-include "binds.kdl"
-include "modules/outputs.kdl"
 include "modules/cursor.kdl"
+include optional=true "modules/displays.kdl"

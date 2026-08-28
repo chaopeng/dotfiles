@@ -2,3 +2,6 @@ private/**
 private
 state.yaml
 DotRoot
+
+# ignore niri displays config, this is per device setting.
+niri/modules/displays.kdl
