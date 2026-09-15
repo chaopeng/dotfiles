@@ -4,16 +4,15 @@ function _choose_editor
 
     argparse -n _choose_editor wait -- $argv
 
-    # If I am already in vscode, keep me is vscode. This also works in ssh.
-    if [ $IS_ANTIGRAVITY = 1 ]
+    if [ $IS_ZED = 1 ]
         if test -n "$_flag_wait"
-            echo "antigravity-ide -w"
+            echo "zeditor -w"
         else
-            echo antigravity-ide
+            echo zeditor
         end
         return
     end
-    
+
     if [ $IS_VSCODE = 1 ]
         if test -n "$_flag_wait"
             echo "code -w"
@@ -28,7 +27,7 @@ function _choose_editor
         return
     end
 
-    # If I am in terminal only, I don't have much choice. 
+    # If I am in terminal only, I don't have much choice.
     if [ $IS_SSH = 1 ]
         echo $term_editor
         return

@@ -22,13 +22,11 @@ if [ "$TERM_PROGRAM" = vscode ]
     set -xg IS_VSCODE 1
 end
 
-# IS_ANTIGRAVITY
-set -xg IS_ANTIGRAVITY 0
-if [ -n "$ANTIGRAVITY_CLI_ALIAS" ]
-    set -xg IS_ANTIGRAVITY 1
+# IS_ZED
+set -xg IS_ZED 0
+if [ -n "$ZED_TERM" ]
+    set -xg IS_ZED 1
 end
-
-
 
 # IS_ZELLIJ
 set -xg IS_ZELLIJ 0
@@ -47,4 +45,3 @@ set -xg IS_KITTY 0
 if test "$TERM_PROGRAM" = kitty -o -n "$KITTY_WINDOW_ID"
     set -xg IS_KITTY 1
 end
-

@@ -82,6 +82,8 @@ sync_all_monitors = false
 [calendar]
 enabled = false
 refresh_minutes = 15
+event_date_format = "%A %e %B"
+event_time_format = "%H:%M"
 
 [control_center]
 hidden_tabs = []
@@ -92,8 +94,6 @@ sidebar_section = "compact"
 width = 700
 
     [control_center.calendar]
-    event_date_format = "%A %e %B"
-    event_time_format = "%H:%M"
     show_events_card = true
     show_week_numbers = false
 

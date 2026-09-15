@@ -9,7 +9,8 @@ alias v nvim
 alias vi nvim
 alias vim nvim
 
-alias aide antigravity-ide
 alias aui antigravity
+
+alias zed zeditor
 
 alias .. "cd .."
