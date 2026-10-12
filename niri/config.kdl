@@ -292,3 +292,5 @@ include "modules/layout.kdl"
 include "modules/alttab.kdl"
 include "modules/cursor.kdl"
 include optional=true "modules/displays.kdl"
+
+include "noctalia.kdl"
