@@ -10,6 +10,7 @@ source $FISH_CFG_PATH/choose-editor.fish
 source $FISH_CFG_PATH/prompt.fish
 source $FISH_CFG_PATH/helpers.fish
 source $FISH_CFG_PATH/alias/alias.fish
+source $FISH_CFG_PATH/gcloud.fish
 
 set -xg FISH_PRIVATE_CFG_PATH $HOME/.config/fish/private-configs
 if test -f $FISH_PRIVATE_CFG_PATH/main.fish
