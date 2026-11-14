@@ -338,7 +338,7 @@ enabled = []
     name = "community"
 
 [shell]
-app_icon_colorize = false
+colorize_icons = false
 avatar_path = ""
 button_borders = true
 card_borders = true
